@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Login — AI Study Portal</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <div class="auth-brand">
+      <div class="brand-badge">AI</div>
+      <div>
+        <div class="brand-title">Study Portal</div>
+        <div class="brand-sub">Powered by your institute</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">Log In</button>
+      <button class="tab-btn" data-tab="register">New Here? Enroll</button>
+    </div>
+
+    <form id="login-form" class="auth-form">
+      <label>Institute Code
+        <input type="text" name="instituteCode" placeholder="e.g. DEMO123" required autocomplete="off" />
+      </label>
+      <label>Email
+        <input type="email" name="email" placeholder="you@example.com" required />
+      </label>
+      <label>Password
+        <input type="password" name="password" placeholder="••••••••" required />
+      </label>
+      <button type="submit" class="primary-btn">Log In</button>
+      <p class="error-text" id="login-error"></p>
+      <p class="hint">Demo: code <b>DEMO123</b>, email <b>riya@example.com</b>, password <b>password123</b></p>
+    </form>
+
+    <form id="register-form" class="auth-form hidden">
+      <label>Institute Code
+        <input type="text" name="instituteCode" placeholder="e.g. DEMO123" required autocomplete="off" />
+      </label>
+      <label>Full Name
+        <input type="text" name="name" required />
+      </label>
+      <label>Email
+        <input type="email" name="email" required />
+      </label>
+      <label>Password
+        <input type="password" name="password" required />
+      </label>
+      <label>Class
+        <input type="text" name="studentClass" placeholder="e.g. 10" required />
+      </label>
+      <label>Board
+        <input type="text" name="board" placeholder="e.g. CBSE, ICSE, State Board" required />
+      </label>
+      <label>Target Exam
+        <input type="text" name="exam" placeholder="e.g. Board Exams, JEE, NEET" required />
+      </label>
+      <button type="submit" class="primary-btn">Create Account</button>
+      <p class="error-text" id="register-error"></p>
+    </form>
+  </div>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Study Dashboard</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="dashboard-page">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-badge" id="institute-badge">AI</div>
+      <div>
+        <div class="brand-title" id="institute-name">Institute</div>
+        <div class="brand-sub">Study Portal</div>
+      </div>
+    </div>
+
+    <div class="student-card">
+      <div class="student-name" id="student-name">Student</div>
+      <div class="student-meta" id="student-meta">Class · Board · Exam</div>
+    </div>
+
+    <div class="profile-summary">
+      <h4>Strengths</h4>
+      <div class="chip-list" id="strengths-list"><span class="empty">None yet</span></div>
+
+      <h4>Working On</h4>
+      <div class="chip-list" id="weaknesses-list"><span class="empty">None yet</span></div>
+
+      <h4>Completed Topics</h4>
+      <div class="chip-list" id="completed-list"><span class="empty">None yet</span></div>
+    </div>
+
+    <button class="logout-btn" id="logout-btn">Log Out</button>
+  </aside>
+
+  <main class="main-panel">
+    <section id="action-select" class="action-select">
+      <h1>What do you want to do today?</h1>
+      <p class="subtitle">Pick an action — your AI tutor adapts to what it already knows about you.</p>
+
+      <div class="action-grid">
+        <button class="action-card" data-action="learn">
+          <div class="action-icon">📘</div>
+          <div class="action-title">Learn a Topic</div>
+          <div class="action-desc">Get a topic explained at your level, step by step.</div>
+        </button>
+        <button class="action-card" data-action="doubt">
+          <div class="action-icon">❓</div>
+          <div class="action-title">Solve a Doubt</div>
+          <div class="action-desc">Stuck on a specific question? Get guided to the answer.</div>
+        </button>
+        <button class="action-card" data-action="notes">
+          <div class="action-icon">📝</div>
+          <div class="action-title">Revision Notes</div>
+          <div class="action-desc">Concise, exam-focused notes for quick review.</div>
+        </button>
+        <button class="action-card" data-action="practice">
+          <div class="action-icon">✏️</div>
+          <div class="action-title">Practice Questions</div>
+          <div class="action-desc">Unlimited questions at the difficulty you need.</div>
+        </button>
+        <button class="action-card" data-action="test">
+          <div class="action-icon">🎯</div>
+          <div class="action-title">Test Yourself</div>
+          <div class="action-desc">A short quiz, graded instantly, with what to study next.</div>
+        </button>
+      </div>
+    </section>
+
+    <section id="session-view" class="session-view hidden">
+      <div class="session-header">
+        <button id="back-btn" class="back-btn">← Back</button>
+        <div class="session-title" id="session-title">Learn a Topic</div>
+      </div>
+
+      <div id="setup-form" class="setup-form">
+        <label>Topic / Subject
+          <input type="text" id="topic-input" placeholder="e.g. Quadratic Equations" />
+        </label>
+        <div id="difficulty-row" class="setup-row hidden">
+          <label>Difficulty
+            <select id="difficulty-input">
+              <option value="adaptive">Adaptive (based on my profile)</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <label>How many questions?
+            <input type="number" id="count-input" min="1" max="20" value="5" />
+          </label>
+        </div>
+        <button id="start-session-btn" class="primary-btn">Start</button>
+      </div>
+
+      <div id="chat-thread" class="chat-thread hidden"></div>
+
+      <form id="chat-form" class="chat-input-row hidden">
+        <input type="text" id="chat-input" placeholder="Type your reply..." autocomplete="off" />
+        <button type="submit" class="primary-btn">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
